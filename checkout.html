@@ -24,60 +24,219 @@
             <img src="img/logo.png" alt="">
           </div>
           <div class="menu d-flex justify-content-center align-items-center">
-            <ul class="">
-              <li><a href="./checkout.html">CARTÃO DE CRÉDITO</a></li>
-              <li><a href="./pix.html">PIX</a></li>
-              <li><a href="./boleto.html">BOLETO BANCÁRIO</a></li>
-            </ul>
+            
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="width: 100px;
+                  height: 100px;
+                 
+                  background: #F1F1F1;
+                  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.08);
+                  border-radius: 10px;"><img src="./img/credit.svg" alt=""><div class="mt-2"  style="font-style: bold;
+                  font-weight: 700;
+                  font-size: 10px;
+                  line-height: 12px;
+                  color: #455922;">CARTÃO DE CRÉDITO</div></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" style="width: 100px;
+                  height: 100px;
+                 
+                  background: #F1F1F1;
+                  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.08);
+                  border-radius: 10px;"><img src="./img/Vector (2).svg" alt="" sizes="" srcset="">
+                  <div class="mt-2"  style="font-style: bold;
+                  font-weight: 700;
+                  font-size: 10px;
+                  line-height: 12px;
+                  color: #455922;">PIX</div></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" style="width: 100px;
+                  height: 100px;
+                 
+                  background: #F1F1F1;
+                  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.08);
+                  border-radius: 10px;"><img src="./img/Vector (1).svg" alt="" sizes="" srcset="">
+                <div class="mt-2"  style="font-style: bold;
+                font-weight: 700;
+                font-size: 10px;
+                line-height: 12px;
+                color: #455922;">BOLETO</div>  
+                </button>
+                </li>
+              </ul>         
           </div>
         </div>
         <div class="container">
-          <div class="row mt-4 d-flex justify-content-center align-items-center">
-            <img src="./img/credit-card.svg" alt="" srcset="">
-          </div>
-          <div class="row mt-4">
-            <div class="col-12 d-flex justify-content-center flex-column">
-              <div class="card"></div>
-              <div class="card-body ">
-                <div class="form-group ">
-                  <label for="name">Nome do Titular</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="">
-                </div>
-                <div class="form-group ">
-                  <label for="number">Número do Cartão</label>
-                  <input type="text" class="form-control" id="number" name="number" placeholder="">
-                </div>
-                <div class="form-group d-flex justify-content-center align-items-center">
-                  <div class="col-6">
-                    <label for="number">Data de Validade</label>
-                    <input type="text" class="form-control" id="number" name="number" placeholder="">
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <div class="row mt-4 d-flex justify-content-center align-items-center">
+                <img src="./img/credit-card.svg" alt="" srcset="">
+              </div>
+              <div class="row mt-4">
+                <div class="col-12 d-flex justify-content-center flex-column">
+                  <div class="card"></div>
+                
+                    <div class="form-group ">
+                      <label for="name">Nome do Titular</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="">
+                    </div>
+                    <div class="form-group ">
+                      <label for="number">Número do Cartão</label>
+                      <input type="text" class="form-control" id="number" name="number" placeholder="">
+                    </div>
+                    <div class="form-group d-flex justify-content-center align-items-center">
+                      <div class="col-6">
+                        <label for="number">Data de Validade</label>
+                        <input type="text" class="form-control" id="number" name="number" placeholder="">
+                      </div>
+                      <div class="col-6">
+                        <label for="number">CVV</label>
+                        <input type="text" class="form-control" id="number" name="number" placeholder="">
+                      </div>
+    
+                    </div>
+    
+                    <div class="form-group ">
+                      <select type="text" class="form-control w-100" id="number" name="number" placeholder="">
+                        <option value="">Pagamento Mensal - R$99/mês</option>
+                        <option value="">Pagamento Mensal - R$399/mês</option>
+                      </select>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                      <input type="checkbox" class="mx-1">
+                      <span style="font-size:12px ;">Eu concordo com os Termos e Condições de Uso</span>
+                    </div>
+    
+                    <div class="form-group d-flex justify-content-center">
+                      <a href="./info-pagamento.html" style="background: #455922; color:#F1F1F1;
+                            box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.08);
+                            border-radius: 100px;" class="m-2 px-5 py-2">CHECKOUT</a>
+                    </div>
                   </div>
-                  <div class="col-6">
-                    <label for="number">CVV</label>
-                    <input type="text" class="form-control" id="number" name="number" placeholder="">
-                  </div>
-
-                </div>
-
-                <div class="form-group ">
-                  <select type="text" class="form-control w-100" id="number" name="number" placeholder="">
-                    <option value="">Pagamento Mensal - R$99/mês</option>
-                    <option value="">Pagamento Mensal - R$399/mês</option>
-                  </select>
-                </div>
-                <div class="d-flex justify-content-center align-items-center">
-                  <input type="checkbox" class="mx-1">
-                  <span style="font-size:12px ;">Eu concordo com os Termos e Condições de Uso</span>
-                </div>
-
-                <div class="form-group d-flex justify-content-center">
-                  <a href="./info-pagamento.html" style="background: #455922; color:#F1F1F1;
-                        box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.08);
-                        border-radius: 100px;" class="m-2 px-5 py-2">CHECKOUT</a>
                 </div>
               </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="row mt-4">
+                  <div class="col-12 d-flex justify-content-center flex-column">
+                    <div class="card"></div>
+                  
+                      <div class="form-group ">
+                        <label for="name">Nome </label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="">
+                      </div>
+                      <div class="form-group ">
+                        <label for="number">CPF</label>
+                        <input type="text" class="form-control" id="number" name="cpf_cnpj" placeholder="">
+                      </div>
+                      <div class="form-group d-flex justify-content-center align-items-center ">
+                        <div class="col-4">
+                          <label for="number">DDD</label>
+                          <input type="text" class="form-control" id="number" name="prefix_phone" placeholder="">
+                        </div>
+                        <div class="col-8">
+                          <label for="number">Telefone</label>
+                          <input type="text" class="form-control" id="number" name="phone" placeholder="">
+                        </div>
+                      </div>
+      
+                      <div class="form-group ">
+                        <select type="text" class="form-control w-100" id="number" name="number" placeholder="">
+                          <option value="">Pagamento Mensal - R$99/mês</option>
+                          <option value="">Pagamento Mensal - R$399/mês</option>
+                        </select>
+                      </div>
+                      <div class="d-flex justify-content-center align-items-center">
+                        <input type="checkbox" class="mx-1">
+                        <span style="font-size:12px ;">Eu concordo com os Termos e Condições de Uso</span>
+                      </div>
+      
+                      <div class="form-group d-flex justify-content-center">
+                        <a href="./info-pagamento.html" style="background: #455922; color:#F1F1F1;
+                              box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.08);
+                              border-radius: 100px;" class="m-2 px-5 py-2">CHECKOUT</a>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="row mt-4">
+                  <div class="col-12 d-flex justify-content-center flex-column">
+                    <div class="card"></div>
+                  
+                      <div class="form-group ">
+                        <label for="name">Nome do Titular</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="">
+                      </div>
+                      <div class="form-group ">
+                        <label for="number">Endereço</label>
+                        <input type="text" class="form-control" id="number" name="number" placeholder="">
+                      </div>
+                      <div class="form-group d-flex justify-content-center align-items-center">
+                        <div class="col-6">
+                          <label for="number">Número</label>
+                          <input type="text" class="form-control" id="number" name="number" placeholder="">
+                        </div>
+                        <div class="col-6">
+                          <label for="number">Complemento</label>
+                          <input type="text" class="form-control" id="number" name="number" placeholder="">
+                        </div>
+      
+                      </div>
+                      <div class="form-group ">
+                        <label for="number">Bairro</label>
+                        <input type="text" class="form-control" id="number" name="number" placeholder="">
+                      </div>
+                      <div class="form-group ">
+                        <label for="number">Cidade</label>
+                        <input type="text" class="form-control" id="number" name="number" placeholder="">
+                      </div>
+                     
+                      <div class="form-group ">
+                        <div class="d-flex justify-content-center align-items-center">
+                          <div class="col-6">
+                            <label for="number">Estado</label>
+                            <input type="text" class="form-control" id="number" name="number" placeholder="">
+                          </div>
+                          <div class="col-6">
+                            <label for="number">País</label>
+                            <input type="text" class="form-control" id="number" name="number" placeholder="">
+                          </div>
+                        </div>
+                        
+                      </div>
+      
+                      <div class="form-group ">
+                        <select type="text" class="form-control w-100" id="number" name="number" placeholder="">
+                          <option value="">Pagamento Mensal - R$99/mês</option>
+                          <option value="">Pagamento Mensal - R$399/mês</option>
+                        </select>
+                      </div>
+                      <div class="d-flex justify-content-center align-items-center mt-3">
+                        <input type="checkbox" class="mx-1">
+                        <span style="font-size:12px ;">Eu concordo com os Termos e Condições de Uso</span>
+                      </div>
+      
+                      <div class="form-group d-flex justify-content-center">
+                        <a href="./info-pagamento.html" style="background: #455922; color:#F1F1F1;
+                              box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.08);
+                              border-radius: 100px;" class="m-2 px-5 py-2">CHECKOUT</a>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
             </div>
+            
+           
           </div>
+
+
+      
+         
+
           <div class="d-flex justify-content-center align-items-center my-5 ">
             <img src="./img/logo_myhood_color.svg.svg" alt="myhood">
           </div>

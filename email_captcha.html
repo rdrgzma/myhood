@@ -50,21 +50,33 @@
       <div class="col-12 d-flex justify-content-center flex-column">
         <div class="card"></div>
         <div class="card-body ">
-          <div class="form-group w">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email">
-          </div>
-          <div class="form-group d-flex justify-content-center ">
-            <div class="g-recaptcha" data-sitekey="6LfKURIUAAAAAO50vlwWZkyK_G2ywqE52NU7YO0S"
-              data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
-            <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
-            <div class="help-block with-errors"></div>
-          </div>
-          <div class="form-group d-flex justify-content-center">
-            <a href="./checkout.html" style="background: #455922; color:#F1F1F1;
-                        box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.08);
-                        border-radius: 100px;" class="m-2 p-2">IR PARA PAGAMENTO</a>
-          </div>
+<form method="post" >
+  <div class="form-group">
+    <label for="name">Nome</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome">
+  </div>
+  <div class="form-group ">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email">
+  </div>
+  <div class="form-group ">
+    <label for="phone">Telefone</label>
+    <input type="text" class="form-control" id="phone" name="phone" placeholder="Digite seu telefone">
+  </div>
+<!--
+<div class="form-group d-flex justify-content-center ">
+    <div class="g-recaptcha" data-sitekey="6LfKURIUAAAAAO50vlwWZkyK_G2ywqE52NU7YO0S"
+      data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+    <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+    <div class="help-block with-errors"></div>
+  </div>
+-->  
+  <div class="form-group d-flex justify-content-center">
+    <button type="submit" style="background: #455922; color:#F1F1F1;
+                box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.08);
+                border-radius: 100px;" class="m-2 p-2">IR PAGAMENTO</button>
+  </div>
+  </form>
         </div>
       </div>
     </div>
@@ -73,9 +85,10 @@
     </div>
 
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-  </script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
   </script>
@@ -83,6 +96,29 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
   <script src='https://www.google.com/recaptcha/api.js'></script>
+  <script>
+    
+    $(document).ready(function () {
+      $('form').submit(function (e) {
+        var email = document.getElementById('email').value;
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var phone_prefix = phone.substring(0, 2);
+        var data = { name: name, email: email, phone: phone, phone_prefix: phone_prefix };
+        
+        const options = {
+            method: 'POST',
+            headers: {Accept: 'application/json', 'Content-Type': 'application/json'},
+            body: JSON.stringify({data})
+          };
+        fetch('https://api.iugu.com/v1/customers?api_token=C5BC65C32438B04A1337F00E00761D9B3F4DAAFAFFD16258CB30E72B4D334319', options)
+          .then(response => response.json())
+          .then(response => console.log(response))
+          .catch(err => console.error(err));
+          e.preventDefault();
+      });
+      
+    });
+  </script>
 </body>
-
 </html>
